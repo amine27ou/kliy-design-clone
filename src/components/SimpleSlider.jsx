@@ -41,7 +41,7 @@ export default function SimpleSlider() {
   return (
     <Slider className="overflow-hidden" {...settings}>
       {homeData.map((pic, index) => (
-        <div key={index} className="relative ">
+        <div key={index} className="relative">
             <div className="w-screen h-screen absolute top-0 left-0 bg-black opacity-50"></div>
           <img src={pic.img} alt={pic.alt} className="w-screen h-screen slide-image z-1" />
           <div className="absolute left-[35%] z-20 top-60 items-center  justify-center  font-bold drop-shadow-lg p-2 flex flex-col">
