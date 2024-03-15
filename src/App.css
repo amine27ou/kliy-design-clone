@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+.navlinks li::after {
+  content: " ";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: gold;
+  transition: all .4s;
+}
+.navlinks li:hover::after {
+  width: 100%;
+}
+.portfeuille {
+  font-family: "Whisper", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.roll:hover {
+  animation: roll .6s alternate;
+}
+@keyframes roll {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('san-fransisco.webp');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+.example {
+  transform: rotateZ(20deg) skew(-20deg);
+  cursor: pointer;
+}
+.nav-link {
+  color: gold;
+  padding: 8px;
+}
+.nav-link.active {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  color: white;
+}
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+.layer {
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  overflow: hidden;
+  text-align: center;
+  transition: all .4s;
+}
+.img-container:hover .layer {
+  height: 100%;
+}
+.first,
+.second {
+  font-family: 'Whisper', cursive;
+  font-size: 40px;
+  font-weight: bold;
+}
+.roll-container {
+  display: flex;
+  flex-direction: column;
+}
+.second {
+  position: absolute;
+  opacity: 0;
+  transition: all .4s;
+  cursor: pointer;
+  transform: translateY(20px);
+}
+.first {
+  position: relative;
+  transition: all .4s;
+  cursor: pointer;
+}
+.roll-container:hover .first {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.roll-container:hover .second {
+  transform: translateY(0px);
+  color: white;
+  opacity: 1;
+}
+.numbers {
+  background-image: linear-gradient(rgba(78, 78, 78, 0.6), rgba(100, 100, 100, 0.6)), url('paris.jpg');
+  width: 98vw;
+  height: 60vh;
+  background-size: cover;
+  padding: 20px;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.nbr-container {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.pack p {
+  color: gray;
+  font-size: 14px;
+}
+.pack {
+  padding: 20px;
+  border-radius: 6px;
+}
+.hamburger{
+  display: none;
+  cursor: pointer;
+  z-index: 10;
+  position: fixed;
+  right: 10px;
+  cursor: pointer;
+
+}
+.hamburger .line {
+  height: 2px;
+  width: 16px;
+  background-color: white;
+  z-index: 100;
+  margin: 3px;
+  transition: all .4s;
+}
+@media (max-width: 728px) {
+  .hamburger {
+    display: block;
+  }
+  .navlinks{
+    position: fixed;
+    flex-direction: column;
+    background: rgb(2, 2, 25);
+    right: -100%;
+    transition: all .4s;
+    left: 100%;
+    padding: 20px;
+    gap: 10px;
+    bottom: 0;
+    top: 0;
+  }
+  .navlinks.active{
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+  }
+  .navbar img {
+    width: 100px;
+  }
+  .hamburger.active .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-1px, -1px);
+  }
+  
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .line:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -6px);
+  }
+  
+  .about-container,.serve1{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .title{
+    font-size: 36px;
+  }
+  .slide-image{
+    object-fit: cover;
+  }
+}
